@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MATPBENCH: Can MLLM Be a Good Multimodal Automated Theorem Prover?.">
+  <meta name="keywords" content="MATPBENCH, Benchmark, Automated Theorem Prover, Multimodal Large Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MATPBENCH: Can MLLM Be a Good Multimodal Automated Theorem Prover?</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/MATP_icon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import { Client } from "https://cdn.skypack.dev/@gradio/client";
+    window.Client = Client;
+  </script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- 添加图片 --> 
+          <img src="./static/images/MATP_icon.png" alt="Logo" style="max-width: 280px; margin-bottom: 40px;">
+          <h1 class="title is-1 publication-title">MATPBENCH: Can MLLM Be a Good<br>Multimodal Automated Theorem Prover?</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://matpbench.github.io/">xxxxx</a>,
+            </span>
+            <!-- <span class="author-block">
+              <a href="https://cpf-nlpr.github.io/">Pengfei Cao</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://aclanthology.org/people/c/chenhao-wang/">Chenhao Wang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://aclanthology.org/people/z/zhitao-he/">Zhitao He</a>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://aclanthology.org/people/h/hongbang-yuan/">Hongbang Yuan</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://aclanthology.org/people/j/jiachun-li/">Jiachun Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://nlpr.ia.ac.cn/cip/yubochen/index.html">Yubo Chen</a>,
+            </span> -->
+            <!-- <span class="author-block">
+              <a href="https://nlpr.ia.ac.cn/cip/~liukang/index.html">Kang Liu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://nlpr-web.ia.ac.cn/cip/english/~junzhao/index.html">Jun Zhao</a>
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> The Hong Kong University of Science and Technology,</span>
+            <span class="author-block"><sup>2</sup> xxxxx</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/RWKU.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://matpbench.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://matpbench.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://matpbench.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      🤗
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+<!--               <span class="link-block">
+                <a href="https://huggingface.co/spaces/jinzhuoran/RWKU"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    📈
+                  </span>
+                  <span>LeaderBoard</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Summary -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Summary</h2>
+        <div class="content has-text-justified">
+          <p>
+            Numerous theorems, such as those in geometry, are presented with multimodal inputs, and humans benefit from visual reasoning in such settings, using diagrams to gain intuition and guide the proof process. 
+            Modern Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in solving a wide range of mathematical problems. However, their potential as Automated Theorem Provers (ATPs) remains underexplored. 
+            As current research and benchmarks rarely address the challenges posed by multimodal automated theorem proving, we introduce MATPBENCH, a new <b></b>Multimodal, Multilingual, and Multi-level</b> benchmark designed to evaluate MLLMs in this emerging role. 
+            MATPBENCH consists of 700 multimodal theorems drawn from high school, university, and competition-level mathematics. Each theorem is accompanied by formal proofs in Lean 4, Isabelle, and Coq, making the benchmark compatible with a wide range of theorem-proving frameworks. 
+            MATPBENCH demand substantial problem-solving skills involving visual information, as well as proficiency across a broad spectrum of mathematical topics. We use MATPBENCH to evaluate a variety of advanced multimodal reasoning models and non-reasoning baselines. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  <!-- Paper image. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Multimodal Automated Theorem Proving (MATP)</h2>
+      <div class="publication-image">
+        <img src="./static/images/MAPT_example.png" alt="Description of the image">
+      </div>
+    </div>
+  </div>
+  <!--/ Paper image. -->
+
+  <!-- Paper image. -->
+  <!-- <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Benchmark Comparison</h2>
+      <div class="content has-text-justified">
+        <p>
+          We provide a detailed comparison between existing unlearning benchmarks and RWKU.
+        </p>
+      </div>
+      <div class="publication-image">
+        <img src="./static/images/comparison.jpg" alt="Description of the image">
+      </div>
+    </div>
+  </div> -->
+  <!--/ Paper image. -->
+
+</section>
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Data Collection and Construction</h2>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Knowledge Source</h2>
+          <p>
+            A general unlearning benchmark should be applicable to various mainstream open-source LLMs.
+This means ensuring that the knowledge to be forgotten is widely present in these models.
+Therefore, we choose famous people as the unlearning targets, requiring the unlearning method to erase factual knowledge about the targets from the model without affecting the neighbor knowledge.
+          </p>
+          
+        </div>
+      </div>
+      <div class="column">
+        <h2 class="title is-4">Probe Construction</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              To construct the forget probes, we first use GPT-4 to generate an excess of query-answer pairs related to the unlearning targets.
+Specifically, we collect relevant passages about each unlearning target from their Wikipedia pages and then prompt GPT-4 to generate query-answer pairs related to the targets based on these passages.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Memorization Quantification</h3>
+        <div class="content has-text-justified">
+          <p>
+            To further validate our collected unlearning targets, we quantify the memorization of various LLMs regarding knowledge from different sources. Higher EM and lower NLL indicate better memorization performance.
+            We choose four different knowledge sources.
+          </p>
+        </div>
+        <div class="publication-image">
+          <img src="./static/images/Mem.jpg" alt="Description of the image">
+        </div>
+
+        <br/>
+  </div>
+</section> -->
+
+<!-- <div class="columns is-centered has-text-centered">
+  <iframe src="" frameborder="0" width="75%" height="800"></iframe>
+</div>
+ -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-3">Experimental Results</h3>
+        <div class="content has-text-justified">
+          <p>
+            Results of our main experiment on <b>LLaMA3-Instruct (8B)</b>.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <div class="publication-image">
+            <img src="./static/images/result1.jpg" alt="Description of the image">
+          </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Results of our main experiment on <b>Phi-3 Mini-4K-Instruct (3.8B)</b>.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <div class="publication-image">
+            <img src="./static/images/result2.jpg" alt="Description of the image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Trade Off</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We show the trade-off between unlearning efficacy,
+locality and model utility in Figure below. (where trainable methods sample different training epochs and RepE samples different intervention weights).
+A good unlearning method should be a straight line down from the top right to the bottom right.
+          </p>
+          
+        </div>
+        <div class="publication-image">
+          <img src="./static/images/epoch.jpg" alt="Description of the image">
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Adversarial Attack Types</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Figure below illustrates the effectiveness of different types of adversarial attacks in inducing target knowledge from the model after forgetting.
+We can observe that prefix injection, affirmative suffix, multiple choice and reverse query attacks effectively elicit unlearned knowledge from the model.
+Because RT is fine-tuned on refusal data, it achieves the best unlearning efficiency under adversarial attacks.
+NPO also demonstrates the potential to resist adversarial attacks.
+          </p>
+          
+        </div>
+        <div class="publication-image">
+          <img src="./static/images/adversarial.jpg" alt="Description of the image">
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Batch-sample Unlearning</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We also explore a particularly challenging unlearning scenario, involving the forgetting of multiple targets simultaneously.
+As illustrated in Figures below, we conducted batch-unlearning experiments with target sizes of 10, 20, 30, 40, and 50.
+          </p>
+          
+        </div>
+        <div class="publication-image">
+          <img src="./static/images/batch-sample.jpg" alt="Description of the image">
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Partial-layer Unlearning</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We conduct an interesting experiment to verify that updating the parameters in which layers can achieve more effective unlearning.
+          </p>
+          
+        </div>
+        <div class="publication-image">
+          <img src="./static/images/partial-layer.jpg" alt="Description of the image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{he2025matpbench,
+    title={MATPBENCH: Can MLLM Be a Good Multimodal Automated Theorem Prover?},
+    author={xxx},
+    year={2025},
+    eprint={},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+      <!--       eprint={2402.18154}, -->
+
+</b></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <a class="icon-link" href="https://github.com/Zhitao-He/MATPBench" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
