@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="MATPBENCH: Can MLLM Be a Good Multimodal Automated Theorem Prover?.">
-  <meta name="keywords" content="MATPBENCH, Benchmark, Automated Theorem Prover, Multimodal Large Language Models">
+        content="MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal Problems?">
+  <meta name="keywords" content="MATP-BENCH, Benchmark, Automated Theorem Prover, Multimodal Large Language Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MATPBENCH: Can MLLM Be a Good Multimodal Automated Theorem Prover?</title>
+  <title>MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal Problems?</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -95,28 +95,27 @@
         <div class="column has-text-centered">
           <!-- 添加图片 --> 
           <img src="./static/images/MATP_icon.png" alt="Logo" style="max-width: 280px; margin-bottom: 40px;">
-          <h1 class="title is-1 publication-title">MATPBENCH: Can MLLM Be a Good<br>Multimodal Automated Theorem Prover?</h1>
+          <h1 class="title is-1 publication-title">MATP-BENCH: Can MLLM Be a Good<br>Automated Theorem Prover for Multimodal Problems?</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://matpbench.github.io/">xxxxx</a>,
+            <span class="author-block"><sup>1</sup>
+              <a href="https://scholar.google.com/citations?user=ULvoYXgAAAAJ&hl=zh-CN">Zhitao He</a>,
+            </span>
+            <span class="author-block"><sup>1</sup>
+              <a href="https://matpbench.github.io/">Zongwei Lyu</a>,
+            </span>
+            <span class="author-block"><sup>2</sup>
+              <a href="https://matpbench.github.io/">Dazhong Chen</a>,
+            </span>
+            <span class="author-block"><sup>1</sup>
+              <a href="https://scholar.google.com/citations?user=5yHRd6kAAAAJ&hl=zh-CN&oi=ao">Dadi Guo</a>,
+            </span>
+            <span class="author-block"><sup>1</sup>
+              <a href="https://mayrfung.github.io/">Yi R. (May) Fung</a>,
             </span>
             <!-- <span class="author-block">
-              <a href="https://cpf-nlpr.github.io/">Pengfei Cao</a>,
-            </span>
-            <span class="author-block">
-              <a href="https://aclanthology.org/people/c/chenhao-wang/">Chenhao Wang</a>,
-            </span>
-            <span class="author-block">
-              <a href="https://aclanthology.org/people/z/zhitao-he/">Zhitao He</a>,
-            </span>
-            <br>
-            <span class="author-block">
-              <a href="https://aclanthology.org/people/h/hongbang-yuan/">Hongbang Yuan</a>,
-            </span>
-            <span class="author-block">
               <a href="https://aclanthology.org/people/j/jiachun-li/">Jiachun Li</a>,
-            </span>
-            <span class="author-block">
+            </span> -->
+            <!-- <span class="author-block">
               <a href="https://nlpr.ia.ac.cn/cip/yubochen/index.html">Yubo Chen</a>,
             </span> -->
             <!-- <span class="author-block">
@@ -129,14 +128,15 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup> The Hong Kong University of Science and Technology,</span>
-            <span class="author-block"><sup>2</sup> xxxxx</span>
+            <br>
+            <span class="author-block"><sup>2</sup> Chinese University of Hong Kong (Shenzhen)</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="./static/RWKU.pdf"
+                <a href="./static/MATP-Bench.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -165,7 +165,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://matpbench.github.io/"
+                <a href="https://github.com/Zhitao-He/MATPBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -175,7 +175,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://matpbench.github.io/"
+                <a href="https://huggingface.co/datasets/Zhitao-He/MATPBench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       🤗
@@ -183,16 +183,6 @@
                   <span>Dataset</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-<!--               <span class="link-block">
-                <a href="https://huggingface.co/spaces/jinzhuoran/RWKU"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    📈
-                  </span>
-                  <span>LeaderBoard</span>
-                  </a>
-              </span> -->
             </div>
 
           </div>
@@ -285,11 +275,15 @@
         <h2 class="title is-3">Summary</h2>
         <div class="content has-text-justified">
           <p>
-            Numerous theorems, such as those in geometry, are presented with multimodal inputs, and humans benefit from visual reasoning in such settings, using diagrams to gain intuition and guide the proof process. 
-            Modern Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in solving a wide range of mathematical problems. However, their potential as Automated Theorem Provers (ATPs) remains underexplored. 
-            As current research and benchmarks rarely address the challenges posed by multimodal automated theorem proving, we introduce MATPBENCH, a new <b></b>Multimodal, Multilingual, and Multi-level</b> benchmark designed to evaluate MLLMs in this emerging role. 
-            MATPBENCH consists of 700 multimodal theorems drawn from high school, university, and competition-level mathematics. Each theorem is accompanied by formal proofs in Lean 4, Isabelle, and Coq, making the benchmark compatible with a wide range of theorem-proving frameworks. 
-            MATPBENCH demand substantial problem-solving skills involving visual information, as well as proficiency across a broad spectrum of mathematical topics. We use MATPBENCH to evaluate a variety of advanced multimodal reasoning models and non-reasoning baselines. 
+            Numerous theorems, such as those in geometry, are often presented in multimodal forms (e.g., diagrams). 
+            Humans benefit from visual reasoning in such settings, using diagrams to gain intuition and guide the proof process. 
+            Modern Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in solving a wide range of mathematical problems. 
+            However, the potential of MLLMs as Automated Theorem Provers (ATPs), specifically in the multimodal domain, remains underexplored. 
+            In this paper, we introduce the <b>M</b>ultimodal <b>A</b>utomated <b>T</b>heorem <b>P</b>roving benchmark (<b>MATP-Bench</b>), a new Multimodal, Multi-level, and Multi-language benchmark 
+            designed to evaluate MLLMs in this role as multimodal automated theorem provers. MATP-BENCH consists of <b>1056 multimodal theorems</b> drawn from <b>high school, university, and competition-level</b> mathematics. 
+            All these multimodal problems are accompanied by <b>formalizations in Lean 4, Coq and Isabelle</b>, thus making the benchmark compatible with a wide range of theorem-proving frameworks. 
+            MATP-BENCH requires models to integrate sophisticated visual understanding with mastery of a broad spectrum of mathematical knowledge and rigorous symbolic reasoning to generate formal proofs. 
+            We use MATP-BENCH to evaluate a variety of advanced multimodal language models. Existing methods can only solve a limited number of the MATP-BENCH problems, indicating that this benchmark poses an open challenge for research on automated theorem proving. 
           </p>
         </div>
       </div>
@@ -300,186 +294,300 @@
   <div class="columns is-centered has-text-centered">
     <div class="column is-full-width">
       <h2 class="title is-3">Multimodal Automated Theorem Proving (MATP)</h2>
-      <div class="publication-image">
-        <img src="./static/images/MAPT_example.png" alt="Description of the image">
+      <div class="box py-2" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div class="publication-image"> 
+        <img src="./static/images/fig1.png" alt="Description of the image">
+        <figcaption class="has-text-centered mt-2"> Figure 1. We illustrate the differences between traditional <b>ATP and MATP</b> through examples from miniF2F (above) and MATPBench (below).  </figcaption>
       </div>
     </div>
+    </div>
   </div>
+</br>
+</br>
+</br>
   <!--/ Paper image. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <!-- <h3 class="title is-4">Memorization Quantification</h3> -->
+      <div class="content has-text-justified">
+        <p>
+          Multimodal theorems consist of an image paired with a natural language theorem statement, which complement each other to convey complete theorem information. 
+          Furthermore, additional auxiliary constructions are often essential for their proof (as shown in the bottom left subfigure). In traditional ATP, 
+          theorem formalization relies solely on textual statements (we use <span style="color: purple;">purple</span> to indicate premises derived from the original statement), 
+          whereas MATP requires the model to extract critical premises not explicitly expressed in the text by analyzing accompanying diagrams (see <b>From diagram</b> on the right). 
+          We provide formalized versions of all multimodal theorems in Lean4, Coq, and Isabelle.
+        </p>
+      </div>
+      <div class="column is-full-width">
+        <h3 class="title is-4">Problem Formulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            <span style="color: red; font-weight: bold;">Automated Theorem Proving (ATP)</span>: In this task, the system takes a <span style="color: purple; font-weight: bold;">formalized theorem statement</span> <em>T</em> as input. The goal is to generate a formal proof <em>P</em> such that:
+          </p>
+          
+          <div style="text-align: center; margin: 1.5em 0; font-family: 'Times New Roman', serif; font-size: 1.2em; line-height: 1.8;">
+            Prover<sub style="font-size: 0.8em;">ATP</sub>(<em>T</em>) → <em>P</em>,<br>
+            where Check(<em>T</em>, <em>P</em>) = True.
+          </div>
+          
+          <p>
+            Here, <strong>Check</strong> denotes the built-in proof verifier of the formal system (such as Lean, Coq, or Isabelle), which ensures that the generated proof <em>P</em> is a valid derivation of theorem <em>T</em>.
+          </p>
+      
+          <p>
+            <span style="color: red; font-weight: bold;">Multimodal Automated Theorem Proving (MATP)</span>: In this task, the input to the MATP system is a pair (<em>I</em>, <em>S</em>), where:
+          </p>
+          
+          <ul>
+            <li><em>I</em> is a <span style="color: purple; font-weight: bold;">multimodal input</span> (e.g., geometric figure);</li>
+            <li><em>S</em> is a <span style="color: purple; font-weight: bold;">natural language statement of the theorem</span> (not formalized).</li>
+          </ul>
+          
+          <p>
+            As shown in Figure 1, the natural language statement <em>S</em> and the information from the multimodal input <em>I</em> are complementary, together forming a complete theorem. Hence, the model must first generate the complete formal theorem <em>T</em>, then generate a valid formal proof <em>P</em>. The entire MATP task can be summarized as:
+          </p>
+          
+          <div style="text-align: center; margin: 1.5em 0; font-family: 'Times New Roman', serif; font-size: 1.2em; line-height: 1.8;">
+            Prover<sub style="font-size: 0.8em;">MATP</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>),<br>
+            where Check(<em>T</em>, <em>P</em>) = True.
+          </div>
+      
+          <p>
+            To avoid <strong>modality leakage</strong>, where the model could ignore visual inputs, we provide only natural language <em>S</em> and image <em>I</em>, without the formalized theorem <em>T</em>. This encourages the model to interpret and reason over multimodal inputs, as humans do when proving multimodal theorems. Furthermore, we incorporate a <strong>theorem verification</strong> task in the experimental setup to ensure that the formal theorems automatically generated by the multimodal model are consistent with the problem statement, rather than fabricating simple theorems arbitrarily.
+          </p>
+        </div>
+      </div>
+      <!-- <div class="publication-image">
+        <img src="./static/images/Mem.jpg" alt="Description of the image">
+      </div> -->
+
+      <br/>
+    </div>
+  </div>
 
   <!-- Paper image. -->
-  <!-- <div class="columns is-centered has-text-centered">
+  <div class="columns is-centered has-text-centered">
     <div class="column is-full-width">
       <h2 class="title is-3">Benchmark Comparison</h2>
       <div class="content has-text-justified">
         <p>
-          We provide a detailed comparison between existing unlearning benchmarks and RWKU.
+          We provide a detailed comparison between existing variable math reasoning benchmarks and MATP-Bench.
         </p>
       </div>
+      <div class="box py-2" style="height: 100%; display: flex; align-items: center; justify-content: center;">
       <div class="publication-image">
-        <img src="./static/images/comparison.jpg" alt="Description of the image">
+        <img src="./static/images/tab1.png" alt="Description of the image">
+        <figcaption class="has-text-centered mt-2"> Figure 2. Comparison of existing related benchmarks. MATP-BENCH is a Multimodal, Multi-level,
+          and Multi-language benchmark designed to evaluate MLLMs as automated theorem provers. </figcaption>
       </div>
     </div>
-  </div> -->
+    </div>
+  </div> 
   <!--/ Paper image. -->
-
 </section>
-
-
-
+</br>
+</br>
+</br>
 <!-- <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Data Collection and Construction</h2>
+    <h2 class="title is-3">MATP-BENCH Features</h2>
     <div class="columns is-centered">
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-4">Knowledge Source</h2>
+      <div class="column is-full-width">
+        <h3 class="title is-4">Multimodal Context and Multi-language Theorem</h3>
+        <div class="content has-text-justified">
           <p>
-            A general unlearning benchmark should be applicable to various mainstream open-source LLMs.
-This means ensuring that the knowledge to be forgotten is widely present in these models.
-Therefore, we choose famous people as the unlearning targets, requiring the unlearning method to erase factual knowledge about the targets from the model without affecting the neighbor knowledge.
+            As shown in the lower part of Figure 1, each theorem consists of an image and a corresponding natural language description, which complement each other to form a complete statement. MATP-BENCH provides formalizations of these multimodal theorems in Lean 4, Isabelle, and Coq. To the best of our knowledge, MATP-BENCH is the first multimodal automated theorem proving benchmark covering all three of these languages.
           </p>
-          
+        </div>
+        <h3 class="title is-4">Hierarchy and Diversity</h3>
+        <div class="content has-text-justified">
+          <p>
+            The problems in MATP-BENCH span three distinct educational stages—high school, university, and competitions—systematically covering a wide range of difficulty levels from elementary to advanced. Specifically, the high school and university problems are collected from publicly available multimodal math problem datasets, while the competition problems are sourced from public Mathematical Olympiad examinations. Moreover, the multimodal theorems in MATP-BENCH are primarily centered around the domain of geometry, spanning plane geometry, 3D geometry, analytic geometry.
+          </p>
         </div>
       </div>
-      <div class="column">
-        <h2 class="title is-4">Probe Construction</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              To construct the forget probes, we first use GPT-4 to generate an excess of query-answer pairs related to the unlearning targets.
-Specifically, we collect relevant passages about each unlearning target from their Wikipedia pages and then prompt GPT-4 to generate query-answer pairs related to the targets based on these passages.
-            </p>
-          </div>
+      <div class="column is-full-width">
+        <h3 class="title is-4">Task Formulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We aim to achieve end-to-end multimodal automated theorem proving (Task 1), where the input is a natural language theorem and an image, and the output is a formal theorem and its proof, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>MATP</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>. Furthermore, to prevent the model from generating formal theorems that do not align with original problems, we separately set up multimodal theorem formalization (Task 2) for verification, which aligns with LeanEuclid. Thus, we divide the task into two progressively challenging sub-tasks:
+          </p>
+          
+          <ul style="margin-left: 1.5em;">
+            <li style="margin-bottom: 0.5em;">
+              <strong>Task 1: Multimodal Automated Theorem Proving</strong>:<br>
+              This task aims to achieve end-to-end multimodal automated theorem proving similar to human provers, by directly generating a formalized theorem <em>T</em> and its proof <em>P</em> from multimodal informal input, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task1</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>.
+            </li>
+            <li>
+              <strong>Task 2: Multimodal Theorem Formalization</strong>:<br>
+              The prover receives the multimodal question, and is required to formalize it into a precise theorem <em>T</em>, formally denoted as <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task2</sub>(<em>I</em>, <em>S</em>) → <em>T</em></span>. This task evaluates the model's ability to correctly understand and formalize information from both textual and visual modalities.
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section> -->
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">MATP-BENCH Features</h2>
+    <div class="columns is-multiline">
+      <!-- Top Left -->
+      <div class="column is-half">
+        <h3 class="title is-4">Multimodal Context and Multi-language Theorem</h3>
+        <div class="content has-text-justified">
+          <p>
+            MATP-BENCH introduces concrete multimodal contexts to jointly evaluate models on visual understanding, mathematical reasoning, and symbolic manipulation. As shown in the lower part of Figure 1, each theorem consists of an image and a corresponding natural language description, which complement each other to form a complete statement. MATP-BENCH provides formalizations of these multimodal theorems in Lean 4, Isabelle, and Coq. To the best of our knowledge, MATP-BENCH is the first multimodal automated theorem proving benchmark covering all three of these languages.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Top Right -->
+      <div class="column is-half">
+        <h3 class="title is-4">Hierarchy and Diversity</h3>
+        <div class="content has-text-justified">
+          <p>
+            The problems in MATP-BENCH span three distinct educational stages—high school, university, and competitions—systematically covering a wide range of difficulty levels from elementary to advanced. Specifically, the high school and university problems are collected from publicly available multimodal math problem datasets, while the competition problems are sourced from public Mathematical Olympiad examinations. Moreover, the multimodal theorems in MATP-BENCH are primarily centered around the domain of geometry, spanning plane geometry, 3D geometry, analytic geometry.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Bottom Left -->
+      <div class="column is-half">
+        <h3 class="title is-4">Task Formulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We aim to achieve end-to-end multimodal automated theorem proving (Task 1), where the input is a natural language theorem and an image, and the output is a formal theorem and its proof, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>MATP</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>. Furthermore, to prevent the model from generating formal theorems that do not align with original problems, we separately set up multimodal theorem formalization (Task 2) for verification, which aligns with LeanEuclid. Thus, we divide the task into two progressively challenging sub-tasks:
+          </p>
+          
+          <ul style="margin-left: 1.5em;">
+            <li style="margin-bottom: 0.5em;">
+              <strong>Task 1: Multimodal Automated Theorem Proving</strong>:<br>
+              This task aims to achieve end-to-end multimodal automated theorem proving similar to human provers, by directly generating a formalized theorem <em>T</em> and its proof <em>P</em> from multimodal informal input, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task1</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>.
+            </li>
+            <li>
+              <strong>Task 2: Multimodal Theorem Formalization</strong>:<br>
+              The prover receives the multimodal question, and is required to formalize it into a precise theorem <em>T</em>, formally denoted as <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task2</sub>(<em>I</em>, <em>S</em>) → <em>T</em></span>. This task evaluates the model's ability to correctly understand and formalize information from both textual and visual modalities.
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Right - Image -->
+      <div class="column is-half">
+        <div class="box" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+          <!-- Replace with your actual image -->
+          <figure class="image">
+            <img src="./static/images/tab2.png" alt="MATP-BENCH illustration">
+            <figcaption class="has-text-centered mt-2"> Figure 3. Statistics summary of MATP-BENCH. Counts and
+              percentages are provided for each category </figcaption>
+          </figure>
         </div>
       </div>
     </div>
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h3 class="title is-4">Memorization Quantification</h3>
-        <div class="content has-text-justified">
-          <p>
-            To further validate our collected unlearning targets, we quantify the memorization of various LLMs regarding knowledge from different sources. Higher EM and lower NLL indicate better memorization performance.
-            We choose four different knowledge sources.
-          </p>
-        </div>
-        <div class="publication-image">
-          <img src="./static/images/Mem.jpg" alt="Description of the image">
-        </div>
-
-        <br/>
   </div>
-</section> -->
+</section>
 
 <!-- <div class="columns is-centered has-text-centered">
   <iframe src="" frameborder="0" width="75%" height="800"></iframe>
 </div>
  -->
 
-<!-- <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-3">Experimental Results</h3>
         <div class="content has-text-justified">
           <p>
-            Results of our main experiment on <b>LLaMA3-Instruct (8B)</b>.
+            Experimental results of <b>Multimodal Automated Theorem Proving (Task 1)</b>, which requires
+model to generate both formalized theorem and proof. We adopt pass@10 as the evaluation metric.
+We further present the experimental results of pass@n (n=1, n=5) in our paper (Appendix).
           </p>
         </div>
         <div class="content has-text-centered">
+        <div class="box" style="height: 100%; display: flex; align-items: center; justify-content: center;">
           <div class="publication-image">
-            <img src="./static/images/result1.jpg" alt="Description of the image">
+            <img src="./static/images/tab3.png" alt="Description of the image">
           </div>
         </div>
+      </div>
         <div class="content has-text-justified">
           <p>
-            Results of our main experiment on <b>Phi-3 Mini-4K-Instruct (3.8B)</b>.
+            Experimental results of <b>Multimodal Theorem Formalization (Task 2)</b>, which only require
+model to generate formalized theorem. We use GPT-4o as the judge and adopt pass@10 as the
+evaluation metric. We present the experimental results of pass@n (n=1, n=5) in our paper (Appendix).
           </p>
         </div>
         <div class="content has-text-centered">
+        <div class="box" style="height: 100%; display: flex; align-items: center; justify-content: center;">
           <div class="publication-image">
-            <img src="./static/images/result2.jpg" alt="Description of the image">
+            <img src="./static/images/tab4.png" alt="Description of the image">
           </div>
         </div>
       </div>
+      </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Trade Off</h2>
+        <h2 class="title is-3">Analysis of Error Distribution</h2>
 
         <div class="content has-text-justified">
           <p>
-            We show the trade-off between unlearning efficacy,
-locality and model utility in Figure below. (where trainable methods sample different training epochs and RepE samples different intervention weights).
-A good unlearning method should be a straight line down from the top right to the bottom right.
+            We analyze the types of errors generated by multimodal models in theorem proving. As shown in Figure, the results indicate that different models exhibit both common errors and specific issues. 
+            This results of Claude and GPT-4.1 suggest that even for relatively better-performing models, the core challenges lie in complex logical reasoning and identifying and utilizing all implicit and explicit information required by the theorem. More fundamental formalization errors such as missing/incorrect library imports and incorrect/undeclared variables/definitions are more prominent in Qwen2.5. This might indicate that while Qwen struggles with proof step errors, it also faces significant issues in generating basic code that conforms to the formal language specification. Overall, all models exhibit problems with incomplete information understanding and broken reasoning chains.
           </p>
           
         </div>
+        <!-- <div class="box py-2" style="height: 100%; display: flex; align-items: center; justify-content: center;"> -->
         <div class="publication-image">
-          <img src="./static/images/epoch.jpg" alt="Description of the image">
+          <img src="./static/images/fig2.png" alt="Description of the image">
+        </div>
+      <!-- </div> -->
+    </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Main Bottleneck in Multimodal Automated Theorem Proving</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            the analysis of the pass@n performance of multimodal models in the Coq language shows that for both complete theorem formalization and proof generation (Task 1) and formalization only (Task 2), allowing models to generate more candidates (from pass@1 to pass@10) generally increases the success rate. However, the pass@n success rate for Task 1 is significantly lower than the pass@n success rate for Task 2 across all difficulty levels and models. This large performance gap between Task 1 and Task 2 is consistent across all pass@n settings, demonstrating that models have shown a certain ability in converting natural language descriptions and geometric figures into Coq formal statements (Task 2 pass@n is relatively high), but still face significant challenges in the subsequent complex logical reasoning and constructing formal proofs.
+          </p>
+          
+        </div>
+        
+        <div class="publication-image">
+          <img src="./static/images/fig3.png" alt="Description of the image">
         </div>
       </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Adversarial Attack Types</h2>
-
+        <h2 class="title is-3">Model Capability in Generating Auxiliary Constructions for Multimodal Theorems</h2>
+    
         <div class="content has-text-justified">
-          <p>
-            Figure below illustrates the effectiveness of different types of adversarial attacks in inducing target knowledge from the model after forgetting.
-We can observe that prefix injection, affirmative suffix, multiple choice and reverse query attacks effectively elicit unlearned knowledge from the model.
-Because RT is fine-tuned on refusal data, it achieves the best unlearning efficiency under adversarial attacks.
-NPO also demonstrates the potential to resist adversarial attacks.
-          </p>
+          <figure class="image is-pulled-right" style="width: 50%; margin-left: 2em;">
+            <img src="./static/images/fig4.png" alt="Description of the image">
+          </figure>
           
-        </div>
-        <div class="publication-image">
-          <img src="./static/images/adversarial.jpg" alt="Description of the image">
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Batch-sample Unlearning</h2>
-
-        <div class="content has-text-justified">
           <p>
-            We also explore a particularly challenging unlearning scenario, involving the forgetting of multiple targets simultaneously.
-As illustrated in Figures below, we conducted batch-unlearning experiments with target sizes of 10, 20, 30, 40, and 50.
+            A characteristic distinguishing multimodal theorem proving from pure text theorem proving is that many theorems require the construction of auxiliary lines to aid thinking, especially problems at the competition level. Therefore, we further investigate the models' ability to construct auxiliary lines during the proof process.
+            With the increase in theorem difficulty, the proportion of problems requiring auxiliary construction significantly rises, confirming the importance of auxiliary construction for solving high-difficulty geometric theorems. Claude 3.7 and GPT 4.1, which perform best in Task 1 and Task 2, attempt to perform auxiliary constructions when generating proofs, and this attempt rate also increases with difficulty, which indicates that the models possess a certain degree of autonomous auxiliary construction capability and awareness. However, the success rate of these proofs containing auxiliary constructions is very low. This prominently indicates that while models can introduce steps or concepts involving auxiliary constructions in proofs, they cannot effectively utilize these constructions to advance the proof process.
           </p>
-          
-        </div>
-        <div class="publication-image">
-          <img src="./static/images/batch-sample.jpg" alt="Description of the image">
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Partial-layer Unlearning</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            We conduct an interesting experiment to verify that updating the parameters in which layers can achieve more effective unlearning.
-          </p>
-          
-        </div>
-        <div class="publication-image">
-          <img src="./static/images/partial-layer.jpg" alt="Description of the image">
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@misc{he2025matpbench,
-    title={MATPBENCH: Can MLLM Be a Good Multimodal Automated Theorem Prover?},
-    author={xxx},
+    title={MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal Problems?},
+    author={Zhitao He, Zongwei Lyu, Dazhong Chen, Dadi Guo, Yi R. (May) Fung},
     year={2025},
     eprint={},
     archivePrefix={arXiv},
