@@ -110,7 +110,7 @@
               <a href="https://scholar.google.com/citations?user=5yHRd6kAAAAJ&hl=zh-CN&oi=ao">Dadi Guo</a>,
             </span>
             <span class="author-block"><sup>1</sup>
-              <a href="https://mayrfung.github.io/">Yi R. (May) Fung</a>,
+              <a href="https://mayrfung.github.io/">Yi R. (May) Fung</a>
             </span>
             <!-- <span class="author-block">
               <a href="https://aclanthology.org/people/j/jiachun-li/">Jiachun Li</a>,
@@ -279,9 +279,9 @@
             Humans benefit from visual reasoning in such settings, using diagrams to gain intuition and guide the proof process. 
             Modern Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in solving a wide range of mathematical problems. 
             However, the potential of MLLMs as Automated Theorem Provers (ATPs), specifically in the multimodal domain, remains underexplored. 
-            In this paper, we introduce the <b>M</b>ultimodal <b>A</b>utomated <b>T</b>heorem <b>P</b>roving benchmark (<b>MATP-Bench</b>), a new Multimodal, Multi-level, and Multi-language benchmark 
-            designed to evaluate MLLMs in this role as multimodal automated theorem provers. MATP-BENCH consists of <b>1056 multimodal theorems</b> drawn from <b>high school, university, and competition-level</b> mathematics. 
-            All these multimodal problems are accompanied by <b>formalizations in Lean 4, Coq and Isabelle</b>, thus making the benchmark compatible with a wide range of theorem-proving frameworks. 
+            In this paper, we introduce the <span style="color: red;">M</span>ultimodal <span style="color: red;">A</span>utomated <span style="color: red;">T</span>heorem <span style="color: red;">P</span>roving Benchmark (<span style="color: red;">MATP-Bench</span>), a new Multimodal, Multi-level, and Multi-language benchmark 
+            designed to evaluate MLLMs in this role as multimodal automated theorem provers. MATP-BENCH consists of <span style="color: red;">1056 multimodal theorems</span> drawn from <span style="color: red;">high school, university, and competition-level</span> mathematics. 
+            All these multimodal problems are accompanied by <span style="color: red;">formalizations in Lean 4, Coq and Isabelle</span>, thus making the benchmark compatible with a wide range of theorem-proving frameworks. 
             MATP-BENCH requires models to integrate sophisticated visual understanding with mastery of a broad spectrum of mathematical knowledge and rigorous symbolic reasoning to generate formal proofs. 
             We use MATP-BENCH to evaluate a variety of advanced multimodal language models. Existing methods can only solve a limited number of the MATP-BENCH problems, indicating that this benchmark poses an open challenge for research on automated theorem proving. 
           </p>
@@ -462,11 +462,11 @@
           
           <ul style="margin-left: 1.5em;">
             <li style="margin-bottom: 0.5em;">
-              <strong>Task 1: Multimodal Automated Theorem Proving</strong>:<br>
+              <strong><span style="color: red;">Task 1: Multimodal Automated Theorem Proving</span></strong>:<br>
               This task aims to achieve end-to-end multimodal automated theorem proving similar to human provers, by directly generating a formalized theorem <em>T</em> and its proof <em>P</em> from multimodal informal input, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task1</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>.
             </li>
             <li>
-              <strong>Task 2: Multimodal Theorem Formalization</strong>:<br>
+              <strong><span style="color: red;">Task 2: Multimodal Theorem Formalization</span></strong>:<br>
               The prover receives the multimodal question, and is required to formalize it into a precise theorem <em>T</em>, formally denoted as <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task2</sub>(<em>I</em>, <em>S</em>) → <em>T</em></span>. This task evaluates the model's ability to correctly understand and formalize information from both textual and visual modalities.
             </li>
           </ul>
